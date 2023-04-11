@@ -1,0 +1,313 @@
+/*#region-----------------------Navigation_Bar----------------------------*/
+
+.Top-Theme-Slider {
+    border-radius: 0 0 0 12px;
+    position: fixed;
+    margin: auto;
+    top: 45px;
+    right: 1px;
+    padding: 15px;
+    .mat-slide-toggle {
+        .mat-icon {
+            height: 30px;
+            margin-top: 12px;
+        }
+    }
+    .Theme-Name {
+        font-size: 12px;
+        margin-left: 3px;
+        font-weight: bold;
+        height: 15px;
+    }
+    :hover {
+        background-color: transparent;
+    }
+}
+
+.Header {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    top: 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15), 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+
+    .Company-Name {
+        float: right;
+        padding: 5px 20px;
+        font-size: 24px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .Top-Nav {
+        padding-left: 15px;
+        padding-top: 5px;
+
+        .Nav_Button {
+            float: left;
+            padding: 2px 20px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover {
+                // color: #eee !important;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+
+        .Active-Page {
+            text-decoration-line: underline;
+        }
+    }
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+
+.Side_Nav {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    transform: translate(-100vw, 0);
+    padding-top: 60px;
+    transition: width 475ms ease-out, transform 450ms ease, border-radius 0.8s 0.1s ease;
+}
+
+.Side_Nav .Nav_Button {
+    width: 100%;
+    float: left;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Side_Nav .Active-Page {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+
+.Side_Nav .Side_Nav_Content a {
+    transform: translatex(-50vw);
+}
+
+.Side_Nav_Border_1 {
+    width: 90%;
+    height: 1px;
+    position: absolute;
+    bottom: 325px;
+    left: 10px;
+    color: transparent;
+}
+
+.Side_Nav_Border_2 {
+    width: 90%;
+    height: 1px;
+    position: absolute;
+    bottom: 210px;
+    left: 10px;
+    color: transparent;
+}
+
+.Side_Nav_Dashboard {
+    width: 75%;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    bottom: 275px;
+    right: 30px;
+    background: transparent;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.Side_Nav_Contact {
+    width: 75%;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    bottom: 225px;
+    right: 30px;
+    background: transparent;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.Side-Theme-Slider {
+    position: absolute;
+    bottom: 115px;
+    .mat-slide-toggle {
+        .mat-icon {
+            height: 30px;
+            margin-top: 12px;
+        }
+    }
+    .Theme-Name {
+        font-size: 12px;
+        margin-left: 6px;
+        font-weight: bold;
+    }
+    :hover {
+        background-color: transparent;
+    }
+}
+
+/* //////////////////////////////////////////////////////////////////////// */
+
+input.Nav_Menu {
+    display: none;
+}
+
+label.Nav_Menu {
+    z-index: 99;
+    position: relative;
+    display: block;
+    height: 45px;
+    width: 25px;
+}
+
+label.Nav_Menu:hover {
+    cursor: pointer;
+}
+
+label.Nav_Menu > i {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    pointer-events: auto;
+    transition-duration: 0.25s;
+    transition-delay: 0.25s;
+}
+
+label.Nav_Menu > i:before,
+label.Nav_Menu > i:after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    left: 50%;
+    content: "";
+    transition: transform 0.35s;
+}
+
+label.Nav_Menu > i:before {
+    transform: translate(-50%, -9px);
+}
+
+label.Nav_Menu > i:after {
+    transform: translate(-50%, 9px);
+}
+
+label.Nav_Menu {
+    position: fixed;
+    top: 0px;
+    left: 15px;
+}
+
+@media screen and (min-width: 733px) {
+    .Nav_Menu {
+        display: none !important;
+    }
+    .Side-Menu {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 732px) {
+    .Top-Nav {
+        display: none !important;
+    }
+    .navbarTopNav {
+        display: none !important;
+    }
+    .Top-Theme-Slider {
+        display: none !important;
+    }
+}
+
+/*#region-----------------------Nav_Menu-Animations----------------------------*/
+
+input.Nav_Menu:checked ~ .Side_Nav {
+    transform: translateX(0);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a {
+    transform: translateX(0);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Contact {
+    transform: translateX(0);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Dashboard {
+    transform: translateX(0);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side-Theme-Slider {
+    transform: translateX(25%);
+}
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(1) {
+    transition: transform 0.8s 0.05s cubic-bezier(0.29, 1.6, 0.44, 0.96);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(2) {
+    transition: transform 0.8s 0.1s cubic-bezier(0.29, 1.6, 0.44, 0.96);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(3) {
+    transition: transform 0.8s 0.15s cubic-bezier(0.29, 1.6, 0.44, 0.96);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(4) {
+    transition: transform 0.8s 0.2s cubic-bezier(0.29, 1.6, 0.44, 0.96);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(5) {
+    transition: transform 0.8s 0.25s cubic-bezier(0.29, 1.6, 0.44, 0.96);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Contact:nth-child(2) {
+    transition: transform 0.8s 0.4s cubic-bezier(0.29, 1.6, 0.44, 0.96);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Dashboard:nth-child(3) {
+    transition: transform 0.8s 0.35s cubic-bezier(0.29, 1.6, 0.44, 0.96);
+}
+
+input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side-Theme-Slider {
+    transition: transform 0.9s 0.35s cubic-bezier(0.29, 7, 0.44, 0.96);
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+
+input.Nav_Menu:checked ~ label > i {
+    background-color: transparent;
+    transform: rotate(90deg);
+}
+
+input.Nav_Menu:checked ~ label > i:before {
+    transform: translate(-50%, -50%) rotate(315deg);
+}
+
+input.Nav_Menu:checked ~ label > i:after {
+    transform: translate(-50%, -50%) rotate(-315deg);
+}
+
+/*#endregion*/
+
+/*#endregion*/

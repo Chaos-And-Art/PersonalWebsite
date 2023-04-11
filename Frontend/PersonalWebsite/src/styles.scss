@@ -1,1 +1,310 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@include mat.core();
+
+//THEMING  ---  GUIDE  --- https://material.angular.io/guide/theming
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme(
+    (
+        color: (
+            primary: mat.define-palette(mat.$pink-palette),
+            accent: mat.define-palette(mat.$blue-grey-palette),
+        ),
+        // Only include `typography` and `density` in the default dark theme.
+        typography: mat.define-typography-config(),
+        density: 0,
+    )
+);
+
+// Define a light theme
+$light-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: mat.define-palette(mat.$indigo-palette),
+            accent: mat.define-palette(mat.$pink-palette),
+        ),
+    )
+);
+
+// Apply the dark theme by default
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+    // Use the `-color` mixins to only apply color styles without reapplying the same
+    // typography and density styles.
+    @include mat.core-color($light-theme);
+    @include mat.button-color($light-theme);
+}
+
+.light-mode {
+    .Chaos-Header {
+        background-color: #eee;
+    }
+
+    .Dashboard {
+        background: radial-gradient(circle farthest-corner at 10% 20%, rgb(174, 200, 212) 0%, rgb(100, 127, 131) 90%);
+
+        .Dashboard-Links a {
+            background: #eee;
+            color: black;
+            border: solid 2px #eee;
+        }
+
+        .Dashboard-Links a:hover,
+        .Dashboard-Links a:focus,
+        .Dashboard-Links a:active {
+            background: #ccc !important;
+            border-color: #ccc !important;
+            color: #333;
+        }
+    }
+
+    .Header {
+        background: whitesmoke;
+        .Company-Name {
+            color: #333;
+        }
+        .Top-Nav {
+            .Nav_Button {
+                color: #888;
+                &:hover {
+                    color: #444;
+                }
+            }
+            .Active-Page {
+                color: black;
+            }
+        }
+    }
+
+    .Side_Nav {
+        background: whitesmoke;
+        .Nav_Button {
+            color: #333;
+        }
+        .Active-Page {
+            color: black;
+        }
+        .Side_Nav_Border_1 {
+            background-color: #333;
+        }
+        .Side_Nav_Border_2 {
+            background-color: #333;
+        }
+        .Side_Nav_Dashboard {
+            color: #333;
+            border: solid 2px #333;
+        }
+        .Side_Nav_Contact {
+            color: #333;
+            border: solid 2px #333;
+        }
+    }
+
+    label.Nav_Menu > i {
+        background-color: #333;
+    }
+
+    label.Nav_Menu > i:before,
+    label.Nav_Menu > i:after {
+        background-color: #333;
+    }
+
+    .Top-Theme-Slider-Background {
+        background: rgb(255, 255, 255, 0);
+        :hover {
+            background: rgb(225, 225, 225, 1);
+        }
+    }
+
+    .Apps-Card {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+
+        .Card-Actions {
+            background: rgba(0, 0, 0, 0.9);
+
+            h4 {
+                color: white;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+            .Card-Image img {
+                filter: brightness(50%);
+            }
+        }
+    }
+
+    .Contact-Form .Form-Input {
+        input {
+            opacity: 0.4;
+            border: none;
+            border-bottom: 1px solid black;
+            &:focus {
+                opacity: 1;
+            }
+        }
+        textarea {
+            opacity: 0.4;
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.dark-mode {
+    background-color: #333;
+    color: whitesmoke;
+
+    .Box {
+        background-color: #222;
+    }
+
+    .Chaos-Header {
+        background-color: #222;
+    }
+
+    .carousel {
+        background-color: #222;
+    }
+
+    .Dashboard {
+        background: radial-gradient(circle farthest-corner at 10% 20%, rgb(112, 144, 161) 0%, rgb(24, 37, 39) 90%);
+
+        .Dashboard-Links a {
+            background: #333;
+            color: whitesmoke;
+            border: solid 2px #333;
+        }
+
+        .Dashboard-Links a:hover,
+        .Dashboard-Links a:focus,
+        .Dashboard-Links a:active {
+            background: #222 !important;
+            border-color: #222 !important;
+            color: #ddd;
+        }
+
+        .Dashboard-Icons img {
+            filter: invert(75%);
+        }
+    }
+
+    .Header {
+        background: rgb(33, 37, 41);
+        .Company-Name {
+            color: #ddd;
+        }
+        .Top-Nav {
+            .Nav_Button {
+                color: #aaa;
+                &:hover {
+                    color: #eee;
+                }
+            }
+            .Active-Page {
+                color: white;
+            }
+        }
+    }
+
+    .Side_Nav {
+        background: rgb(33, 37, 41);
+        .Nav_Button {
+            color: #aaa;
+        }
+        .Active-Page {
+            color: white;
+        }
+        .Side_Nav_Border_1 {
+            background-color: #aaa;
+        }
+        .Side_Nav_Border_2 {
+            background-color: #aaa;
+        }
+        .Side_Nav_Dashboard {
+            color: #aaa;
+            border: solid 2px #aaa;
+        }
+        .Side_Nav_Contact {
+            color: #aaa;
+            border: solid 2px #aaa;
+        }
+    }
+
+    label.Nav_Menu > i {
+        background-color: #ccc;
+    }
+
+    label.Nav_Menu > i:before,
+    label.Nav_Menu > i:after {
+        background-color: #ccc;
+    }
+
+    .Top-Theme-Slider-Background {
+        background: rgb(0, 0, 0, 0);
+        :hover {
+            background: rgb(0, 0, 0, 1);
+        }
+    }
+
+    .Apps-Card {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+
+        .Card-Actions {
+            background: rgba(201, 201, 201, 0.9);
+
+            h4 {
+                color: black;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            .Card-Image img {
+                filter: brightness(50%);
+            }
+        }
+    }
+
+    .Contact-Form .Form-Input {
+        img {
+            filter: invert(100%);
+        }
+
+        input {
+            background-color: #222;
+            color: white;
+            opacity: 0.6;
+            border: none;
+            border-bottom: 1px solid white;
+            &:focus {
+                opacity: 1;
+            }
+        }
+        textarea {
+            background-color: #222;
+            color: white;
+            opacity: 0.6;
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+//   @import "~bootstrap/scss/bootstrap";
+//   @import "swiper/css/bundle";
