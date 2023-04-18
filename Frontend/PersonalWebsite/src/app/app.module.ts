@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/_pages/home/home.component';
 import { DashboardComponent } from './components/_pages/dashboard/dashboard.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 //External Modules
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
-import { FooterComponent } from './components/footer/footer.component';
-
+import {NgParticlesModule} from "ng-particles";
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     MatSlideToggleModule,
-    MatIconModule
+    MatIconModule,
+    NgParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

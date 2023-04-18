@@ -5,14 +5,10 @@
 }
 
 .Theme-Slider {
-    margin: auto;
     padding: 15px;
     text-align: right;
-    .mat-slide-toggle {
-        .mat-icon {
-            height: 30px;
-            margin-top: 12px;
-        }
+    .themeSwitch{
+        margin-right: 10px;
     }
     .Theme-Name {
         font-size: 12px;
@@ -36,12 +32,12 @@
 }
 
 .Dashboard-Name {
-    padding-top: 20px;
     font-size: 20px;
 }
 
 .Dashboard-Links {
     padding-top: 10px;
+    padding-bottom: 25px;
     text-align: center;
     column-count: 1;
 }
@@ -50,9 +46,8 @@
     width: 75%;
     margin: auto;
     display: block;
-    padding: 5px 15px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    padding: 8px 15px;
+    margin-top: 15px;
     border-radius: 12px;
     font-weight: 500;
     font-size: 15px;
@@ -61,7 +56,7 @@
 
 .Dashboard-Icons {
     margin: auto;
-    margin-top: 25px;
+    display: inline;
     text-align: center;
 }
 
