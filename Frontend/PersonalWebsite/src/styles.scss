@@ -1,14 +1,90 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
-//THEMING  ---  GUIDE  --- https://material.angular.io/guide/theming
+// Light mode palette
+$light-palette: (
+    50: #f5f5f5,
+    100: #e5e5e5,
+    200: #d6d6d6,
+    300: #c7c7c7,
+    400: #b8b8b8,
+    500: #a9a9a9,
+    600: #9a9a9a,
+    700: #8b8b8b,
+    800: #7c7c7c,
+    900: #6d6d6d,
+    A100: #ffffff,
+    A200: #f2f2f2,
+    A400: #d9d9d9,
+    A700: #c6c6c6,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: rgba(black, 0.87),
+        400: rgba(black, 0.87),
+        500: rgba(black, 0.87),
+        600: rgba(black, 0.87),
+        700: rgba(black, 0.87),
+        800: white,
+        900: white,
+        A100: rgba(black, 0.87),
+        A200: rgba(black, 0.87),
+        A400: rgba(black, 0.87),
+        A700: rgba(black, 0.87),
+    ),
+);
+
+// Dark mode palette
+$dark-palette: (
+    50: #f0f0f0,
+    100: #d9d9d9,
+    200: #bfbfbf,
+    300: #a6a6a6,
+    400: #8c8c8c,
+    500: #737373,
+    600: #595959,
+    700: #404040,
+    800: #262626,
+    900: #0d0d0d,
+    A100: #f5f5f5,
+    A200: #cccccc,
+    A400: #b3b3b3,
+    A700: #999999,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: rgba(black, 0.87),
+        A200: rgba(black, 0.87),
+        A400: rgba(black, 0.87),
+        A700: rgba(black, 0.87),
+    ),
+);
+
+// Define a light theme
+$light-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: mat.define-palette($light-palette),
+            accent: mat.define-palette($light-palette),
+        ),
+    )
+);
 
 // Define a dark theme
 $dark-theme: mat.define-dark-theme(
     (
         color: (
-            primary: mat.define-palette(mat.$pink-palette),
-            accent: mat.define-palette(mat.$blue-grey-palette),
+            primary: mat.define-palette($dark-palette),
+            accent: mat.define-palette($dark-palette),
         ),
         // Only include `typography` and `density` in the default dark theme.
         typography: mat.define-typography-config(),
@@ -16,40 +92,20 @@ $dark-theme: mat.define-dark-theme(
     )
 );
 
-// Define a light theme
-$light-theme: mat.define-light-theme(
-    (
-        color: (
-            primary: mat.define-palette(mat.$indigo-palette),
-            accent: mat.define-palette(mat.$pink-palette),
-        ),
-    )
-);
-
-// Apply the dark theme by default
-@include mat.core-theme($dark-theme);
-@include mat.button-theme($dark-theme);
-
-// Apply the light theme only when the user prefers light themes.
-@media (prefers-color-scheme: light) {
-    // Use the `-color` mixins to only apply color styles without reapplying the same
-    // typography and density styles.
-    @include mat.core-color($light-theme);
-    @include mat.button-color($light-theme);
-}
-
 .light-mode {
+    @include mat.all-component-colors($light-theme);
+
     .Chaos-Header {
         background-color: #eee;
     }
 
     .Dashboard {
-        background: radial-gradient(circle farthest-corner at 10% 20%, rgb(174, 200, 212) 0%, rgb(100, 127, 131) 90%);
+        // background: radial-gradient(circle farthest-corner at 10% 20%, rgb(174, 200, 212) 0%, rgb(100, 127, 131) 90%);
 
         .Dashboard-Links a {
-            background: #eee;
+            background: #E1E1E1;
             color: black;
-            border: solid 2px #eee;
+            border: solid 2px #E1E1E1;
         }
 
         .Dashboard-Links a:hover,
@@ -157,28 +213,22 @@ $light-theme: mat.define-light-theme(
 }
 
 .dark-mode {
+    @include mat.all-component-colors($dark-theme);
+
     background-color: #333;
     color: whitesmoke;
-
-    .Box {
-        background-color: #222;
-    }
 
     .Chaos-Header {
         background-color: #222;
     }
 
-    .carousel {
-        background-color: #222;
-    }
-
     .Dashboard {
-        background: radial-gradient(circle farthest-corner at 10% 20%, rgb(112, 144, 161) 0%, rgb(24, 37, 39) 90%);
+        // background: radial-gradient(circle farthest-corner at 10% 20%, rgb(112, 144, 161) 0%, rgb(24, 37, 39) 90%);
 
         .Dashboard-Links a {
-            background: #333;
+            background: #3C3C3C;
             color: whitesmoke;
-            border: solid 2px #333;
+            border: solid 2px #3C3C3C;
         }
 
         .Dashboard-Links a:hover,

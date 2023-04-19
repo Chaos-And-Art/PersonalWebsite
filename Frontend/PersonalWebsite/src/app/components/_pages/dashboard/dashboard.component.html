@@ -1,28 +1,22 @@
-<!-- <div class="background" style="margin-top: 47px;">
-    <ng-particles id="tsparticles" [options]="options"></ng-particles>
-</div> -->
+<div class="Background">
+    <ng-particles id="tsparticles" [options]="particlesOptions" [particlesInit]="particlesInit"
+        (particlesLoaded)="particlesLoaded($event)">
+    </ng-particles>
+</div>
 
 <div class="Dashboard">
-    <ng-particles
-    [id]="id"
-    [options]="particlesOptions"
-    [particlesInit]="particlesInit"
-    (particlesLoaded)="particlesLoaded($event)">
-    </ng-particles>
 
     <div class="Theme-Slider">
-        <mat-slide-toggle class="themeSwitch" [checked]="isDarkModeInit" labelPosition="before"
-            (change)="toggleDarkMode()">
+        <mat-slide-toggle #themeSwitch class="themeSwitch" (change)="toggleDarkMode()" [checked]="isDarkModeInit">
         </mat-slide-toggle>
-        <div class="Theme-Name">
+        <div class="Theme-Name" (click)="toggleDarkMode()">
             <p *ngIf="isDarkModeInit">Dark Mode</p>
             <p *ngIf="!isDarkModeInit">Light Mode</p>
         </div>
     </div>
 
     <div class="Dashboard-Logo">
-        <!-- <img [defaultImage]="defaultImage" [lazyLoad]="image"> -->
-        <img src="{{image}}">
+        <img [defaultImage]="defaultImage" [lazyLoad]="image">
     </div>
 
     <div class="Dashboard-Name">
@@ -39,6 +33,7 @@
     </div>
 
     <div class="Dashboard-Icons">
+        <span class="mdi mdi-elevator-passenger-off"></span>
         <a href="https://www.youtube.com/channel/UCiKZ7lGT_YsVageXRisVCOA">
             <img src="/assets/icons/youtube.png">
         </a>

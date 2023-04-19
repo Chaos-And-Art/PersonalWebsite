@@ -10,9 +10,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 
 //External Modules
+import {NgParticlesModule} from "ng-particles";
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
-import {NgParticlesModule} from "ng-particles";
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -26,9 +28,11 @@ import {NgParticlesModule} from "ng-particles";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgParticlesModule,
+    LazyLoadImageModule,
     MatSlideToggleModule,
     MatIconModule,
-    NgParticlesModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

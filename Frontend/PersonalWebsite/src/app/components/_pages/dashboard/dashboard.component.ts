@@ -3,58 +3,45 @@ import { Router } from '@angular/router';
 import { ThemingService } from 'src/app/services/theming.service';
 import { ClickMode, Container, Engine, HoverMode, MoveDirection, OutMode } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import { ParticleConfiguration } from 'src/app/utils/particleConfiguration';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  styles: [
-    `
-    //Handle Toggle Icons since a warning is thrown in css and since Angular doesnt support changing them
-    $sun-path: 'm5.64 17l-.71.71a1 1 0 0 0 0 1.41a1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm7-7a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1ZM5.64 7.05a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.29a1 1 0 0 0 0-1.41l-.71-.71a1 1 0 0 0-1.41 1.41Zm12 .29a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.64.71a1 1 0 0 0 0 1.41a1 1 0 0 0 .66.29ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-9 8a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Zm6.36-2A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0a1 1 0 0 0 0-1.41ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 3.5-3.5a3.5 3.5 0 0 1-3.5 3.5Z';
-    $moon-path: 'M21.64 13a1 1 0 0 0-1.05-.14a8.05 8.05 0 0 1-3.37.73a8.15 8.15 0 0 1-8.14-8.1a8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69a1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14a9.79 9.79 0 0 0 2.1-.22a8.11 8.11 0 0 1-7.18 4.32Z';
-    
-    ::ng-deep .themeSwitch {
-      transform: scale(1.3);
-      .mdc-switch__ripple {
-        display:none
-      }
-      .mdc-switch__icon {
-        transform: scale(.8);
-      
-        // Toggle off
-        &--off > path {
-          d: path($sun-path);
-        }
-        
-        // Toggle on
-        &--on > path {
-          d: path($moon-path);
-        }
-      }
-    }
-    `
-  ]
 })
 
 export class DashboardComponent implements OnInit {
-  width: number = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-  height: number = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-  colorTheme: any;
   isDarkMode?: boolean;
   isDarkModeInit?: boolean;
+  particlesOptions: any;
 
   defaultImage = "/assets/_misc/Silhouette_icon.png";
   image = "/assets/_misc/Silhouette_small.png";
 
-  constructor(private themeService: ThemingService, private router: Router) {
+  constructor(private themeService: ThemingService, private router: Router,) {
     this.themeService.initTheme();
   }
 
-  @ViewChild('darkModeSwitch', { read: ElementRef }) element: ElementRef | undefined;
+  @ViewChild('themeSwitch', { read: ElementRef }) element: ElementRef | undefined;
 
   ngOnInit(): void {
     this.isDarkModeInit = (this.themeService.getColorTheme() == "dark-mode") ? true : false;
+
+    const particleConfig = new ParticleConfiguration(this.themeService);
+    this.particlesOptions = particleConfig.particleOptionsArray[0];
+  }
+
+  ngAfterViewInit() {
+    const sun = 'M12 15.5q1.45 0 2.475-1.025Q15.5 13.45 15.5 12q0-1.45-1.025-2.475Q13.45 8.5 12 8.5q-1.45 0-2.475 1.025Q8.5 10.55 8.5 12q0 1.45 1.025 2.475Q10.55 15.5 12 15.5Zm0 1.5q-2.075 0-3.537-1.463T7 12q0-2.075 1.463-3.537T12 7q2.075 0 3.537 1.463T17 12q0 2.075-1.463 3.537T12 17ZM1.75 12.75q-.325 0-.538-.213Q1 12.325 1 12q0-.325.212-.537Q1.425 11.25 1.75 11.25h2.5q.325 0 .537.213Q5 11.675 5 12q0 .325-.213.537-.213.213-.537.213Zm18 0q-.325 0-.538-.213Q19 12.325 19 12q0-.325.212-.537.212-.213.538-.213h2.5q.325 0 .538.213Q23 11.675 23 12q0 .325-.212.537-.212.213-.538.213ZM12 5q-.325 0-.537-.213Q11.25 4.575 11.25 4.25v-2.5q0-.325.213-.538Q11.675 1 12 1q.325 0 .537.212 .213.212 .213.538v2.5q0 .325-.213.537Q12.325 5 12 5Zm0 18q-.325 0-.537-.212-.213-.212-.213-.538v-2.5q0-.325.213-.538Q11.675 19 12 19q.325 0 .537.212 .213.212 .213.538v2.5q0 .325-.213.538Q12.325 23 12 23ZM6 7.05l-1.425-1.4q-.225-.225-.213-.537.013-.312.213-.537.225-.225.537-.225t.537.225L7.05 6q.2.225 .2.525 0 .3-.2.5-.2.225-.513.225-.312 0-.537-.2Zm12.35 12.375L16.95 18q-.2-.225-.2-.538t.225-.512q.2-.225.5-.225t.525.225l1.425 1.4q.225.225 .212.538-.012.313-.212.538-.225.225-.538.225t-.538-.225ZM16.95 7.05q-.225-.225-.225-.525 0-.3.225-.525l1.4-1.425q.225-.225.538-.213.313 .013.538 .213.225 .225.225 .537t-.225.537L18 7.05q-.2.2-.512.2-.312 0-.538-.2ZM4.575 19.425q-.225-.225-.225-.538t.225-.538L6 16.95q.225-.225.525-.225.3 0 .525.225 .225.225 .225.525 0 .3-.225.525l-1.4 1.425q-.225.225-.537.212-.312-.012-.537-.212ZM12 12Z'
+    const moon = 'M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.2 0 .425.013 .225.013 .575.038-.9.8-1.4 1.975-.5 1.175-.5 2.475 0 2.25 1.575 3.825Q14.25 12.9 16.5 12.9q1.3 0 2.475-.463T20.95 11.15q.025.3 .038.488Q21 11.825 21 12q0 3.75-2.625 6.375T12 21Zm0-1.5q2.725 0 4.75-1.687t2.525-3.963q-.625.275-1.337.412Q17.225 14.4 16.5 14.4q-2.875 0-4.887-2.013T9.6 7.5q0-.6.125-1.287.125-.687.45-1.562-2.45.675-4.062 2.738Q4.5 9.45 4.5 12q0 3.125 2.188 5.313T12 19.5Zm-.1-7.425Z'
+
+    if (this.element) {
+
+      this.element.nativeElement.querySelector('.mdc-switch__icon--on').firstChild.setAttribute('d', moon);
+      this.element.nativeElement.querySelector('.mdc-switch__icon--off').firstChild.setAttribute('d', sun);
+
+    }
   }
 
   toggleDarkMode() {
@@ -77,87 +64,16 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  id = "tsparticles";
-
-  particlesOptions = {
-
-      fpsLimit: 120,
-      interactivity: {
-          events: {
-              onClick: {
-                  enable: true,
-                  mode: ClickMode.push,
-              },
-              onHover: {
-                  enable: true,
-                  mode: HoverMode.repulse,
-              },
-              resize: true,
-          },
-          modes: {
-              push: {
-                  quantity: 4,
-              },
-              repulse: {
-                  distance: 200,
-                  duration: 0.4,
-              },
-          },
-      },
-      particles: {
-          color: {
-              value: "#ffffff",
-          },
-          links: {
-              color: "#ffffff",
-              distance: 150,
-              enable: true,
-              opacity: 1,
-              width: 1,
-          },
-          collisions: {
-              enable: true,
-          },
-          move: {
-              direction: MoveDirection.none,
-              enable: true,
-              outModes: {
-                  default: OutMode.bounce,
-              },
-              random: false,
-              speed: 6,
-              straight: false,
-          },
-          number: {
-              density: {
-                  enable: true,
-                  area: 800,
-              },
-              value: 80,
-          },
-          opacity: {
-              value: 0.5,
-          },
-          shape: {
-              type: "circle",
-          },
-          size: {
-              value: { min: 1, max: 5 },
-          },
-      },
-      detectRetina: true,
-  };
-
   particlesLoaded(container: Container): void {
-      console.log(container);
+    // console.log(container);
   }
 
   async particlesInit(engine: Engine): Promise<void> {
-      console.log(engine);
-
-      // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      await loadFull(engine);
+    // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
   }
+
 }
+
