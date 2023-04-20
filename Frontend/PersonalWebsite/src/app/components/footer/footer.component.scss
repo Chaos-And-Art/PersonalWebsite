@@ -9,7 +9,7 @@
     background: #222;
 }
 
-.Contact .mat-stroked-button {
+.Contact button {
     width: 45%;
     margin: auto;
     background: none;
@@ -43,31 +43,31 @@
 }
 
 @media screen and (min-width: 425px) {
-    .Contact .mat-stroked-button {
+    .Contact button {
         width: 35%;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .Contact .mat-stroked-button {
+    .Contact button {
         width: 20%;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .Contact .mat-stroked-button {
+    .Contact button {
         width: 18%;
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .Contact .mat-stroked-button {
+    .Contact button {
         width: 12%;
     }
 }
 
 @media screen and (min-width: 2560px) {
-    .Contact .mat-stroked-button {
+    .Contact button {
         width: 8%;
     }
 }

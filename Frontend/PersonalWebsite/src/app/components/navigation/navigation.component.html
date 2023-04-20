@@ -1,13 +1,9 @@
-<div class="Top-Theme-Slider-Background">
-    <div class="Top-Theme-Slider">
-        <mat-slide-toggle color="primary" [checked]="isDarkModeInit" labelPosition="before" (change)="toggleDarkMode()">
-            <mat-icon *ngIf="isDarkModeInit">dark_mode</mat-icon>
-            <mat-icon *ngIf="!isDarkModeInit">brightness_7</mat-icon>
-        </mat-slide-toggle>
-        <div class="Theme-Name">
-            <p *ngIf="isDarkModeInit">Dark Mode</p>
-            <p *ngIf="!isDarkModeInit">Light Mode</p>
-        </div>
+<div class="Theme-Slider">
+    <mat-slide-toggle #themeSwitch class="themeSwitch" (change)="toggleDarkMode()" [checked]="isDarkModeInit">
+    </mat-slide-toggle>
+    <div class="Theme-Name" (click)="toggleDarkMode()">
+        <p *ngIf="isDarkModeInit">Dark Mode</p>
+        <p *ngIf="!isDarkModeInit">Light Mode</p>
     </div>
 </div>
 
@@ -27,6 +23,7 @@
 <label class="Nav_Menu" for="Nav_Menu">
     <i></i>
 </label>
+
 <nav class="Side_Nav">
     <div class="Side_Nav_Content">
         <div class="Side_Nav_Links">
@@ -45,11 +42,9 @@
         </div>
 
         <div class="Side-Theme-Slider">
-            <mat-slide-toggle color="primary" [checked]="isDarkModeInit" labelPosition="before" (change)="toggleDarkMode()">
-                <mat-icon *ngIf="isDarkModeInit">dark_mode</mat-icon>
-                <mat-icon *ngIf="!isDarkModeInit">brightness_7</mat-icon>
+            <mat-slide-toggle #themeSwitch_Side class="themeSwitch_Side" (change)="toggleDarkMode()" [checked]="isDarkModeInit">
             </mat-slide-toggle>
-            <div class="Theme-Name">
+            <div class="Theme-Name" (click)="toggleDarkMode()">
                 <p *ngIf="isDarkModeInit">Dark Mode</p>
                 <p *ngIf="!isDarkModeInit">Light Mode</p>
             </div>

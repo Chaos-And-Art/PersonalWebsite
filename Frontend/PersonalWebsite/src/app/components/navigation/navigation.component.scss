@@ -1,32 +1,10 @@
 /*#region-----------------------Navigation_Bar----------------------------*/
 
-.Top-Theme-Slider {
-    border-radius: 0 0 0 12px;
-    position: fixed;
-    margin: auto;
-    top: 45px;
-    right: 1px;
-    padding: 15px;
-    .mat-slide-toggle {
-        .mat-icon {
-            height: 30px;
-            margin-top: 12px;
-        }
-    }
-    .Theme-Name {
-        font-size: 12px;
-        margin-left: 3px;
-        font-weight: bold;
-        height: 15px;
-    }
-    :hover {
-        background-color: transparent;
-    }
-}
-
 .Header {
     position: fixed;
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
     overflow: hidden;
     z-index: 2;
     top: 0;
@@ -42,13 +20,13 @@
 
     .Top-Nav {
         padding-left: 15px;
-        padding-top: 5px;
+        padding-top: 10px;
 
         .Nav_Button {
             float: left;
             padding: 2px 20px;
             font-size: 20px;
-            font-weight: 600;
+            font-weight: 545;
             text-decoration: none;
 
             &:hover {
@@ -63,6 +41,43 @@
         }
     }
 }
+
+.Theme-Slider {
+    margin: auto;
+    position: fixed;
+    top: 45px;
+    right: 0px;
+    padding: 15px;
+    .Theme-Name {
+        font-size: 12px;
+        margin-top: 5px;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+    ::ng-deep .themeSwitch {
+        margin-left: 12px;
+        transform: scale(1.3);
+        .mdc-switch__ripple {
+            display: none;
+        }
+        .mdc-switch__icons {
+            background: grey;
+            border-radius: 50%;
+        }
+        .mdc-switch__icons:hover {
+            background: transparent;
+            border-radius: 50%;
+        }
+        .mdc-switch__icon:hover {
+            background: transparent;
+        }
+        .mdc-switch__icon {
+            transform: scale(0.8);
+        }
+    }
+}
+
 
 /* //////////////////////////////////////////////////////////////////////////// */
 
@@ -102,7 +117,7 @@
     width: 90%;
     height: 1px;
     position: absolute;
-    bottom: 325px;
+    bottom: 365px;
     left: 10px;
     color: transparent;
 }
@@ -111,7 +126,7 @@
     width: 90%;
     height: 1px;
     position: absolute;
-    bottom: 210px;
+    bottom: 250px;
     left: 10px;
     color: transparent;
 }
@@ -120,7 +135,7 @@
     width: 75%;
     padding: 5px 10px 5px 10px;
     position: absolute;
-    bottom: 275px;
+    bottom: 315px;
     right: 30px;
     background: transparent;
     border-radius: 15px;
@@ -134,7 +149,7 @@
     width: 75%;
     padding: 5px 10px 5px 10px;
     position: absolute;
-    bottom: 225px;
+    bottom: 265px;
     right: 30px;
     background: transparent;
     border-radius: 15px;
@@ -146,22 +161,38 @@
 
 .Side-Theme-Slider {
     position: absolute;
-    bottom: 115px;
-    .mat-slide-toggle {
-        .mat-icon {
-            height: 30px;
-            margin-top: 12px;
-        }
-    }
+    bottom: 165px;
+    left: 29%;
     .Theme-Name {
         font-size: 12px;
+        margin-top: 5px;
         margin-left: 6px;
         font-weight: bold;
     }
-    :hover {
-        background-color: transparent;
+
+    ::ng-deep .themeSwitch_Side {
+        margin-left: 15px;
+        transform: scale(1.3);
+        .mdc-switch__ripple {
+            display: none;
+        }
+        .mdc-switch__icons {
+            background: grey;
+            border-radius: 50%;
+        }
+        .mdc-switch__icons:hover {
+            background: transparent;
+            border-radius: 50%;
+        }
+        .mdc-switch__icon:hover {
+            background: transparent;
+        }
+        .mdc-switch__icon {
+            transform: scale(0.8);
+        }
     }
 }
+
 
 /* //////////////////////////////////////////////////////////////////////// */
 
@@ -226,13 +257,17 @@ label.Nav_Menu {
 }
 
 @media screen and (max-width: 732px) {
+    .Header {
+        padding-top: 6px;
+        padding-bottom: 5px;
+    }    
     .Top-Nav {
         display: none !important;
     }
     .navbarTopNav {
         display: none !important;
     }
-    .Top-Theme-Slider {
+    .Theme-Slider {
         display: none !important;
     }
 }
@@ -298,16 +333,23 @@ input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side-Theme-Slider {
 input.Nav_Menu:checked ~ label > i {
     background-color: transparent;
     transform: rotate(90deg);
+    -webkit-tranform: rotate(90deg);
+    -moz-transform: rotate(90deg);
 }
 
 input.Nav_Menu:checked ~ label > i:before {
     transform: translate(-50%, -50%) rotate(315deg);
+    -webkit-tranform: translate(-50%, -50%) rotate(315deg);
+    -moz-transform:translate(-50%, -50%) rotate(315deg);
 }
 
 input.Nav_Menu:checked ~ label > i:after {
     transform: translate(-50%, -50%) rotate(-315deg);
+    -webkit-tranform: translate(-50%, -50%) rotate(-315deg);
+    -moz-transform:translate(-50%, -50%) rotate(-315deg);
 }
 
 /*#endregion*/
 
 /*#endregion*/
+  

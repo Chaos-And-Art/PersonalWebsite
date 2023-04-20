@@ -7,7 +7,7 @@
 <div class="Dashboard">
 
     <div class="Theme-Slider">
-        <mat-slide-toggle #themeSwitch class="themeSwitch" (change)="toggleDarkMode()" [checked]="isDarkModeInit">
+        <mat-slide-toggle class="themeSwitch" (change)="toggleDarkMode()" [checked]="isDarkModeInit">
         </mat-slide-toggle>
         <div class="Theme-Name" (click)="toggleDarkMode()">
             <p *ngIf="isDarkModeInit">Dark Mode</p>
