@@ -333,20 +333,14 @@ input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side-Theme-Slider {
 input.Nav_Menu:checked ~ label > i {
     background-color: transparent;
     transform: rotate(90deg);
-    -webkit-tranform: rotate(90deg);
-    -moz-transform: rotate(90deg);
 }
 
 input.Nav_Menu:checked ~ label > i:before {
     transform: translate(-50%, -50%) rotate(315deg);
-    -webkit-tranform: translate(-50%, -50%) rotate(315deg);
-    -moz-transform:translate(-50%, -50%) rotate(315deg);
 }
 
 input.Nav_Menu:checked ~ label > i:after {
     transform: translate(-50%, -50%) rotate(-315deg);
-    -webkit-tranform: translate(-50%, -50%) rotate(-315deg);
-    -moz-transform:translate(-50%, -50%) rotate(-315deg);
 }
 
 /*#endregion*/
