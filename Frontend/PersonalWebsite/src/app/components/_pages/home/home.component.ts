@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ThemingService } from 'src/app/services/theming.service';
 import { Container, Engine, } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { ParticleConfiguration } from 'src/app/utils/particleConfiguration';
+import { ParticleConfiguration } from 'src/app/utilities/particleConfiguration';
 // import { PopupsComponent } from '../../popups/popups.component';
 
 @Component({
@@ -29,6 +29,20 @@ export class HomeComponent implements OnInit {
   onExploreButton() {
     window.scrollTo({ left: 0, top: this.height / 1.1, behavior: 'smooth' })
   }
+
+  startAnimation(event: MouseEvent) {
+    // Get the element that triggered the event
+    const element = event.target as HTMLElement;
+    
+    // Add the "animate" class to the element when it is hovered
+    element.classList.add("animate");
+    
+    // Remove the "animate" class after 1.5 seconds
+    setTimeout(function() {
+      element.classList.remove("animate");
+    }, 1500);
+  }
+  
 
   openChaosDialog() {
     // this.dialog.open(PopupsComponent, {

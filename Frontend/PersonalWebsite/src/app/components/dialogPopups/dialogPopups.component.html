@@ -1,0 +1,155 @@
+
+<!--#region Pages  -->
+
+<div *ngIf="data.type === 'music'">
+    <h2 mat-dialog-title>Music Coming Soon!</h2>
+    <mat-dialog-content class="mat-typography">
+        <p>The Music page is currently in development, but will be available in the near future!</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial>OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'chaos'">
+    <h2 mat-dialog-title>Chaos Coming Soon!</h2>
+    <mat-dialog-content>
+        <p>The Chaos page is currently in development, but will be available in the near future!</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial>OK</button>
+    </mat-dialog-actions>
+</div>
+
+<!--#endregion -->
+
+<!--#region Misc  -->
+
+<div *ngIf="data.type === 'googlePlay'">
+    <h2 mat-dialog-title>Google Play Coming Soon!</h2>
+    <mat-dialog-content>
+        <p>Our applications and games will be avaiable soon on Google play! Thank you for your patience!</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial>OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'appStore'">
+    <h2 mat-dialog-title>App Store Coming Soon!</h2>
+    <mat-dialog-content>
+        <p>Our applications and games will be avaiable soon on Apple App Store! Thank you for your patience!</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial>OK</button>
+    </mat-dialog-actions>
+</div>
+
+<!--#endregion -->
+
+<!--#region Login  -->
+
+<div *ngIf="data.type === 'loginSuccessful'">
+    <h2 mat-dialog-title style="color: rgb(115, 200, 115);">Successfully Logged In</h2>
+    <mat-dialog-content>
+        <p>You have Successfully Logged In</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(115, 200, 115);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'loginFailed_0'">
+    <h2 mat-dialog-title style="color: rgb(250, 100, 100);">Login Failed</h2>
+    <mat-dialog-content>
+        <p>An unexpected error occured. Please try again, or if the error persists contact support.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(250, 100, 100);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'loginFailed_401'">
+    <h2 mat-dialog-title style="color: rgb(250, 100, 100);">Login Failed</h2>
+    <mat-dialog-content>
+        <p>The email or password you entered was incorrect. Please try again.</p>
+    </mat-dialog-content>
+    <!-- Add a drop down menu that will show specific details for why the login failed. For example:
+        The email or password entered is incorrect. Please check both the email and password then try again.
+     -->
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(250, 100, 100);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'loginFailed_500'">
+    <h2 mat-dialog-title style="color: rgb(250, 100, 100);">Login Failed</h2>
+    <mat-dialog-content>
+        <p>Please try again, or if the error persists contact support.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(250, 100, 100);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<!--#endregion -->
+
+<!--#region Contact  -->
+
+<div *ngIf="data.type === 'contactFormSuccess'">
+    <h2 mat-dialog-title style="color: rgb(115, 200, 115);">Successfully Sent</h2>
+    <mat-dialog-content>
+        <p>Thank you for contacting us. We will be in touch with you at our earliest convenience.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(115, 200, 115);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'contactFormFailed'">
+    <h2 mat-dialog-title style="color: rgb(250, 100, 100);">Submission Failed</h2>
+    <mat-dialog-content>
+        <p>The form could not be sent. Please try again later.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(250, 100, 100);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<!--#endregion -->
+
+<!--#region Subscribe  -->
+
+<div *ngIf="data.type === 'subscribeFormSuccess'">
+    <h2 mat-dialog-title style="color: rgb(115, 200, 115);">Successfully Signed up</h2>
+    <mat-dialog-content>
+        <p>Thank you for signing up for the latest news from us.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(115, 200, 115);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'subscribeFormFailed_0'">
+    <h2 mat-dialog-title style="color: rgb(250, 100, 100);">Submission Failed</h2>
+    <mat-dialog-content>
+        <p>The form could not be sent. Please try again later.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(250, 100, 100);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.type === 'subscribeFormFailed_403'">
+    <h2 mat-dialog-title style="color: rgb(250, 100, 100);">Submission Failed</h2>
+    <mat-dialog-content>
+        <p>The email provided is already subscribed for updates.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close cdkFocusInitial style="color: rgb(250, 100, 100);">OK</button>
+    </mat-dialog-actions>
+</div>
+
+<!--#endregion -->
+
+

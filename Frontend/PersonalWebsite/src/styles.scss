@@ -103,16 +103,16 @@ $dark-theme: mat.define-dark-theme(
         // background: radial-gradient(circle farthest-corner at 10% 20%, rgb(174, 200, 212) 0%, rgb(100, 127, 131) 90%);
 
         .Dashboard-Links a {
-            background: #E1E1E1;
+            background: #e1e1e1;
             color: black;
-            border: solid 2px #E1E1E1;
+            border: solid 1px #444;
         }
 
         .Dashboard-Links a:hover,
         .Dashboard-Links a:focus,
         .Dashboard-Links a:active {
             background: #ccc !important;
-            border-color: #ccc !important;
+            border-color: #555 !important;
             color: #333;
         }
     }
@@ -210,6 +210,46 @@ $dark-theme: mat.define-dark-theme(
             }
         }
     }
+
+    .Login_Form_Box {
+        h2 {
+            color: #333;
+        }
+        h4 {
+            color: #444;
+        }
+        .Login_Form {
+            .Form_Input {
+                input {
+                    color: white;
+                    background-color: transparent;
+                    border-image: linear-gradient(to right, black 0%, black 100%) 1;
+                    &:focus {
+                        opacity: 1;
+                    }
+                }
+            }
+            .Form_Button button {
+                color: black;
+                background-color: rgb(255, 199, 110);
+            }
+        }
+    }
+
+    .dot-flashing {
+        background-color: #333;
+        color: #333;
+    }
+
+    .dot-flashing::before {
+        background-color: #333;
+        color: #333;
+    }
+
+    .dot-flashing::after {
+        background-color: #333;
+        color: #333;
+    }
 }
 
 .dark-mode {
@@ -226,16 +266,17 @@ $dark-theme: mat.define-dark-theme(
         // background: radial-gradient(circle farthest-corner at 10% 20%, rgb(112, 144, 161) 0%, rgb(24, 37, 39) 90%);
 
         .Dashboard-Links a {
-            background: #3C3C3C;
+            background: #3c3c3c;
             color: whitesmoke;
-            border: solid 2px #3C3C3C;
+            // border: solid 2px #3C3C3C;
+            border: solid 1px #999;
         }
 
         .Dashboard-Links a:hover,
         .Dashboard-Links a:focus,
         .Dashboard-Links a:active {
             background: #222 !important;
-            border-color: #222 !important;
+            border-color: #aaa !important;
             color: #ddd;
         }
 
@@ -344,6 +385,52 @@ $dark-theme: mat.define-dark-theme(
                 opacity: 1;
             }
         }
+    }
+
+    .Login_Form_Box {
+        h2 {
+            color: #ddd;
+        }
+        h4 {
+            color: #ccc;
+        }
+        .Login_Form {
+            .Form_Input {
+                input {
+                    color: white;
+                    background-color: transparent;
+                    border-image: linear-gradient(to right, white 0%, whiteblack 100%) 1;
+                    &:focus {
+                        opacity: 1;
+                    }
+                }
+                input::placeholder {
+                    color: white;
+                }
+            }
+            img {
+                filter: invert(1);
+            }
+            .Form_Button button {
+                color: black;
+                background-color: rgb(255, 199, 110);
+            }
+        }
+    }
+
+    .dot-flashing {
+        background-color: #ddd;
+        color: #ddd;
+    }
+
+    .dot-flashing::before {
+        background-color: #ddd;
+        color: #ddd;
+    }
+
+    .dot-flashing::after {
+        background-color: #ddd;
+        color: #ddd;
     }
 }
 

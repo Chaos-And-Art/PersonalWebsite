@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/_pages/dashboard/dashboard.component';
 import { BlankComponent } from './components/_pages/blank/blank.component';
 import { HomeComponent } from './components/_pages/home/home.component';
+import { LoginComponent } from './components/_pages/login/login.component';
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent },
   { path: 'Home', component: HomeComponent },
+  { path: 'Login', component: LoginComponent },
   // { path: 'Chaos', component: ChaosComponent },
   // { path: 'Art', component: ArtComponent },
   // { path: 'Apps', component: AppsComponent },

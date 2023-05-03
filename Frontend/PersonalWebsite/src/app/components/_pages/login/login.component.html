@@ -1,0 +1,57 @@
+<div class="Login_Form_Box">
+    <h2>Log In</h2>
+    <br>
+    <!-- <h4>Don't have an account? <span style="color:rgb(161,132,85) ; cursor: pointer;">Sign Up Here</span></h4> -->
+    <form class="Login_Form" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+
+        <div class="Form_Input">
+            <!-- <img src="/assets/icons/at.png"> -->
+            <input type="email" id="Email" formControlName="email" placeholder="Email" required>
+        </div>
+        <div class="Alert" *ngIf="form['email'].invalid && form['email'].dirty">
+            <div class="Validation" *ngIf="form['email'].errors?.['required']">
+                <p>Email is required.</p>
+            </div>
+            <div class="Validation" *ngIf="form['email'].errors?.['email'] && submitted">
+                <p>Email is invalid.</p>
+            </div>
+        </div>
+
+        <div class="Form_Input">
+            <!-- <img src="/assets/icons/lock.png"> -->
+            <input type="{{inputType}}" id="Password" formControlName="password" placeholder="Password" required>
+            <span class="Password-Display" (click)="toggleFieldTextType()">
+                <img src="/assets/icons/eye.png" *ngIf="showPassword">
+                <img src="/assets/icons/eye-off.png" *ngIf="!showPassword">
+            </span>
+        </div>
+
+        <div class="Alert" *ngIf="form['password'].invalid && form['password'].dirty">
+            <div class="Validation" *ngIf="form['password'].errors?.['required']">
+                <p>Password is required.</p>
+            </div>
+        </div>
+
+        <div class="Form_Button">
+            <button mat-stroked-button type="submit" value="Submit" name="submit" [disabled]="loading">
+                <p *ngIf="!loading">Log In</p>
+                <div class="dot-flashing" *ngIf="loading"></div>
+            </button>
+        </div>
+
+        <br>
+        <div class="Alert" *ngIf="!loginForm.valid && submitted">
+            <div class="Validation">
+                <p>Must enter your Username or Password to continue.</p>
+            </div>
+        </div>
+
+        <div class="Form_Help">
+            <p>Forgot username?</p>
+            <p>Forgot password?</p>
+        </div>
+
+    </form>
+    <br>
+
+</div>

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ThemingService } from 'src/app/services/theming.service';
 import { Container, Engine, } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { ParticleConfiguration } from 'src/app/utils/particleConfiguration';
+import { ParticleConfiguration } from 'src/app/utilities/particleConfiguration';
 
 @Component({
   selector: 'app-dashboard',
