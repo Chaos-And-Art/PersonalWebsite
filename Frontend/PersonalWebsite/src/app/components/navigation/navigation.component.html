@@ -19,14 +19,14 @@
     </nav>
 </div>
 
-<input id="Nav_Menu" class="Nav_Menu" type="checkbox" />
-<label class="Nav_Menu" for="Nav_Menu">
+<input id="Nav_Ham" class="Nav_Ham" type="checkbox" />
+<label class="Nav_Ham" for="Nav_Ham">
     <i></i>
 </label>
 
-<nav class="Side_Nav">
-    <div class="Side_Nav_Content">
-        <div class="Side_Nav_Links">
+<nav class="Side_Nav_Menu">
+    <div class="Side_Nav_Menu_Content">
+        <div class="Side_Nav_Menu_Links">
             <a routerLink="/Home" routerLinkActive="Active-Page" (click)="clickOut();" class="Nav_Button">Home</a>
             <a (click)="clickOut(); openChaosDialog();" class="Nav_Button ">Chaos</a>
             <a routerLink="/Art" routerLinkActive="Active-Page" (click)="clickOut();" class="Nav_Button">Art</a>
@@ -34,11 +34,11 @@
             <a (click)="clickOut(); openMusicDialog();" class="Nav_Button">Music</a>
         </div>
 
-        <div class="Side_Nav_Closer">
-            <div class="Side_Nav_Border_1">-</div>
-            <a class="Side_Nav_Contact" routerLink="/Contact" (click)="clickOut();">CONTACT US</a>
-            <a class="Side_Nav_Dashboard" routerLink="/">DASHBOARD</a>
-            <div class="Side_Nav_Border_2">-</div>
+        <div class="Side_Nav_Menu_Closer">
+            <div class="Side_Nav_Menu_Border_1">-</div>
+            <a class="Side_Nav_Menu_Contact" routerLink="/Contact" (click)="clickOut();">CONTACT US</a>
+            <a class="Side_Nav_Menu_Dashboard" routerLink="/">DASHBOARD</a>
+            <div class="Side_Nav_Menu_Border_2">-</div>
         </div>
 
         <div class="Side-Theme-Slider">

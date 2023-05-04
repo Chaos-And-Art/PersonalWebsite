@@ -74,7 +74,6 @@
 .Alert {
     width: 50%;
     margin: auto;
-    background-color: rgb(248, 215, 218);
     border-radius: 5px;
     .Validation {
         p {
@@ -102,23 +101,18 @@
     display: inline-block;
     position: absolute;
     top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    animation: dotFlashing 1s infinite alternate;
 }
 
 .dot-flashing::before {
     left: -15px;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    animation: dotFlashing 1s infinite alternate;
-    animation-delay: 0s;
 }
 
 .dot-flashing::after {
     left: 15px;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    animation: dotFlashing 1s infinite alternate;
     animation-delay: 1s;
 }
 

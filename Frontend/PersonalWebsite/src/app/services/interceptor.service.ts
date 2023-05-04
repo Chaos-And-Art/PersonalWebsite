@@ -5,7 +5,7 @@ import { applicationStorageService } from './applicationStorage.service';
 import { catchError } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { ErrorCodes, InfoCodes, RedirectCodes, ServerErrorCodes, SuccessCodes } from '../models/statusCodes';
-import { DialogPopupsComponent } from '../components/dialogPopups/dialogPopups.component';
+import { PopupsComponent } from '../components/popups/popups.component';
 import { MatDialog } from '@angular/material/dialog';
 
 

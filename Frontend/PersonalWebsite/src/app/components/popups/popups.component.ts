@@ -4,10 +4,10 @@ import { PopupTypes } from 'src/app/models/popupTypes';
 
 @Component({
   selector: 'app-popups',
-  templateUrl: './dialogPopups.component.html',
-  styleUrls: ['./dialogPopups.component.scss']
+  templateUrl: './popups.component.html',
+  styleUrls: ['./popups.component.scss']
 })
-export class DialogPopupsComponent implements OnInit {
+export class PopupsComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: PopupTypes) { }
 

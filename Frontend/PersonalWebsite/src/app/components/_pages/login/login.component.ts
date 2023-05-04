@@ -5,7 +5,7 @@ import { applicationStorageService } from 'src/app/services/applicationStorage.s
 import { AuthService } from 'src/app/services/auth.service';
 import { UrlService } from 'src/app/services/url.service';
 import { Utilities } from 'src/app/utilities/utilities';
-import { DialogPopupsComponent } from '../../dialogPopups/dialogPopups.component';
+import { PopupsComponent } from '../../popups/popups.component';
 
 @Component({
   selector: 'app-login',
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
         applicationStorageService.addValueToStorage("DetourAccessTokenExpiration", result.expiration.toString());
         this.loading = false;
 
-        this.dialog.open(DialogPopupsComponent, {
+        this.dialog.open(PopupsComponent, {
           data: {
             type: 'loginSuccessful',
           },

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorCodes, ServerErrorCodes } from '../models/statusCodes';
 import { applicationStorageService } from '../services/applicationStorage.service';
-import { DialogPopupsComponent } from '../components/dialogPopups/dialogPopups.component';
+import { PopupsComponent } from '../components/popups/popups.component';
 
 @Injectable()
 export class Utilities {
@@ -43,7 +43,7 @@ export class Utilities {
   }
 
   selectPopupError(startingPoint: string, errorCode: number) {
-    this.dialog.open(DialogPopupsComponent, {
+    this.dialog.open(PopupsComponent, {
       data: {
         type: startingPoint + errorCode,
       },

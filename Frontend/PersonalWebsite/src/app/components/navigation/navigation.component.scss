@@ -82,7 +82,7 @@
 
 /* //////////////////////////////////////////////////////////////////////////// */
 
-.Side_Nav {
+.Side_Nav_Menu {
     position: fixed;
     z-index: 2;
     left: 0;
@@ -94,7 +94,7 @@
     transition: width 475ms ease-out, transform 450ms ease, border-radius 0.8s 0.1s ease;
 }
 
-.Side_Nav .Nav_Button {
+.Side_Nav_Menu .Nav_Button {
     width: 100%;
     float: left;
     text-decoration: none;
@@ -105,16 +105,16 @@
     cursor: pointer;
 }
 
-.Side_Nav .Active-Page {
+.Side_Nav_Menu .Active-Page {
     text-decoration-line: underline;
     text-decoration-style: dotted;
 }
 
-.Side_Nav .Side_Nav_Content a {
+.Side_Nav_Menu .Side_Nav_Menu_Content a {
     transform: translatex(-50vw);
 }
 
-.Side_Nav_Border_1 {
+.Side_Nav_Menu_Border_1 {
     width: 90%;
     height: 1px;
     position: absolute;
@@ -123,7 +123,7 @@
     color: transparent;
 }
 
-.Side_Nav_Border_2 {
+.Side_Nav_Menu_Border_2 {
     width: 90%;
     height: 1px;
     position: absolute;
@@ -132,7 +132,7 @@
     color: transparent;
 }
 
-.Side_Nav_Dashboard {
+.Side_Nav_Menu_Dashboard {
     width: 75%;
     padding: 5px 10px 5px 10px;
     position: absolute;
@@ -146,7 +146,7 @@
     text-decoration: none;
 }
 
-.Side_Nav_Contact {
+.Side_Nav_Menu_Contact {
     width: 75%;
     padding: 5px 10px 5px 10px;
     position: absolute;
@@ -197,11 +197,11 @@
 
 /* //////////////////////////////////////////////////////////////////////// */
 
-input.Nav_Menu {
+input.Nav_Ham {
     display: none;
 }
 
-label.Nav_Menu {
+label.Nav_Ham {
     z-index: 99;
     position: relative;
     display: block;
@@ -209,11 +209,11 @@ label.Nav_Menu {
     width: 25px;
 }
 
-label.Nav_Menu:hover {
+label.Nav_Ham:hover {
     cursor: pointer;
 }
 
-label.Nav_Menu > i {
+label.Nav_Ham > i {
     position: absolute;
     width: 100%;
     height: 3px;
@@ -223,8 +223,8 @@ label.Nav_Menu > i {
     transition-delay: 0.25s;
 }
 
-label.Nav_Menu > i:before,
-label.Nav_Menu > i:after {
+label.Nav_Ham > i:before,
+label.Nav_Ham > i:after {
     position: absolute;
     display: block;
     width: 100%;
@@ -234,22 +234,22 @@ label.Nav_Menu > i:after {
     transition: transform 0.35s;
 }
 
-label.Nav_Menu > i:before {
+label.Nav_Ham > i:before {
     transform: translate(-50%, -9px);
 }
 
-label.Nav_Menu > i:after {
+label.Nav_Ham > i:after {
     transform: translate(-50%, 9px);
 }
 
-label.Nav_Menu {
+label.Nav_Ham {
     position: fixed;
     top: 0px;
     left: 15px;
 }
 
 @media screen and (min-width: 733px) {
-    .Nav_Menu {
+    .Nav_Ham {
         display: none !important;
     }
     .Side-Menu {
@@ -273,74 +273,74 @@ label.Nav_Menu {
     }
 }
 
-/*#region-----------------------Nav_Menu-Animations----------------------------*/
+/*#region-----------------------Nav_Ham-Animations----------------------------*/
 
-input.Nav_Menu:checked ~ .Side_Nav {
+input.Nav_Ham:checked ~ .Side_Nav_Menu {
     transform: translateX(0);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Links a {
     transform: translateX(0);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Contact {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Closer .Side_Nav_Menu_Contact {
     transform: translateX(0);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Dashboard {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Closer .Side_Nav_Menu_Dashboard {
     transform: translateX(0);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side-Theme-Slider {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side-Theme-Slider {
     transform: translateX(25%);
 }
 
 /* ///////////////////////////////////////////////////////////////////////////// */
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(1) {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Links a:nth-child(1) {
     transition: transform 0.8s 0.05s cubic-bezier(0.29, 1.6, 0.44, 0.96);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(2) {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Links a:nth-child(2) {
     transition: transform 0.8s 0.1s cubic-bezier(0.29, 1.6, 0.44, 0.96);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(3) {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Links a:nth-child(3) {
     transition: transform 0.8s 0.15s cubic-bezier(0.29, 1.6, 0.44, 0.96);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(4) {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Links a:nth-child(4) {
     transition: transform 0.8s 0.2s cubic-bezier(0.29, 1.6, 0.44, 0.96);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Links a:nth-child(5) {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Links a:nth-child(5) {
     transition: transform 0.8s 0.25s cubic-bezier(0.29, 1.6, 0.44, 0.96);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Contact:nth-child(2) {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Closer .Side_Nav_Menu_Contact:nth-child(2) {
     transition: transform 0.8s 0.4s cubic-bezier(0.29, 1.6, 0.44, 0.96);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side_Nav_Closer .Side_Nav_Dashboard:nth-child(3) {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side_Nav_Menu_Closer .Side_Nav_Menu_Dashboard:nth-child(3) {
     transition: transform 0.8s 0.35s cubic-bezier(0.29, 1.6, 0.44, 0.96);
 }
 
-input.Nav_Menu:checked ~ .Side_Nav .Side_Nav_Content .Side-Theme-Slider {
+input.Nav_Ham:checked ~ .Side_Nav_Menu .Side_Nav_Menu_Content .Side-Theme-Slider {
     transition: transform 0.9s 0.35s cubic-bezier(0.29, 7, 0.44, 0.96);
 }
 
 /* ////////////////////////////////////////////////////////////////////////////// */
 
-input.Nav_Menu:checked ~ label > i {
+input.Nav_Ham:checked ~ label > i {
     background-color: transparent;
     transform: rotate(90deg);
 }
 
-input.Nav_Menu:checked ~ label > i:before {
+input.Nav_Ham:checked ~ label > i:before {
     transform: translate(-50%, -50%) rotate(315deg);
 }
 
-input.Nav_Menu:checked ~ label > i:after {
+input.Nav_Ham:checked ~ label > i:after {
     transform: translate(-50%, -50%) rotate(-315deg);
 }
 

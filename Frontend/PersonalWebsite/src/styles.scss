@@ -133,9 +133,17 @@ $dark-theme: mat.define-dark-theme(
                 color: black;
             }
         }
+        .Top-Login {
+            img {
+                filter: invert(0);
+            }
+            button {
+                color: black;
+            }
+        }
     }
 
-    .Side_Nav {
+    .Side_Nav_Menu {
         background: whitesmoke;
         .Nav_Button {
             color: #333;
@@ -143,28 +151,28 @@ $dark-theme: mat.define-dark-theme(
         .Active-Page {
             color: black;
         }
-        .Side_Nav_Border_1 {
+        .Side_Nav_Menu_Border_1 {
             background-color: #333;
         }
-        .Side_Nav_Border_2 {
+        .Side_Nav_Menu_Border_2 {
             background-color: #333;
         }
-        .Side_Nav_Dashboard {
+        .Side_Nav_Menu_Dashboard {
             color: #333;
             border: solid 2px #333;
         }
-        .Side_Nav_Contact {
+        .Side_Nav_Menu_Contact {
             color: #333;
             border: solid 2px #333;
         }
     }
 
-    label.Nav_Menu > i {
+    label.Nav_Ham > i {
         background-color: #333;
     }
 
-    label.Nav_Menu > i:before,
-    label.Nav_Menu > i:after {
+    label.Nav_Ham > i:before,
+    label.Nav_Ham > i:after {
         background-color: #333;
     }
 
@@ -250,6 +258,26 @@ $dark-theme: mat.define-dark-theme(
         background-color: #333;
         color: #333;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    .Obsidian_Nav {
+        .Obsidian_Nav_Items {
+            background: whitesmoke;
+            .Items_Group {
+                color: #222;
+            }
+        }
+        .Obsidian_Nav_Side_Icons {
+            background: whitesmoke;
+            .Icons_Group {
+                color: #222;
+                .Icon {
+                    filter: invert(0)
+                }
+            }
+        }
+    }
 }
 
 .dark-mode {
@@ -301,9 +329,17 @@ $dark-theme: mat.define-dark-theme(
                 color: white;
             }
         }
+        .Top-Login {
+            img {
+                filter: invert(1);
+            }
+            button {
+                color: white;
+            }
+        }
     }
 
-    .Side_Nav {
+    .Side_Nav_Menu {
         background: rgb(33, 37, 41);
         .Nav_Button {
             color: #aaa;
@@ -311,28 +347,28 @@ $dark-theme: mat.define-dark-theme(
         .Active-Page {
             color: white;
         }
-        .Side_Nav_Border_1 {
+        .Side_Nav_Menu_Border_1 {
             background-color: #aaa;
         }
-        .Side_Nav_Border_2 {
+        .Side_Nav_Menu_Border_2 {
             background-color: #aaa;
         }
-        .Side_Nav_Dashboard {
+        .Side_Nav_Menu_Dashboard {
             color: #aaa;
             border: solid 2px #aaa;
         }
-        .Side_Nav_Contact {
+        .Side_Nav_Menu_Contact {
             color: #aaa;
             border: solid 2px #aaa;
         }
     }
 
-    label.Nav_Menu > i {
+    label.Nav_Ham > i {
         background-color: #ccc;
     }
 
-    label.Nav_Menu > i:before,
-    label.Nav_Menu > i:after {
+    label.Nav_Ham > i:before,
+    label.Nav_Ham > i:after {
         background-color: #ccc;
     }
 
@@ -418,6 +454,15 @@ $dark-theme: mat.define-dark-theme(
         }
     }
 
+    .Alert {
+        background-color: rgb(253, 179, 185);
+        .Validation {
+            p {
+                color: black;
+            }
+        }
+    }
+
     .dot-flashing {
         background-color: #ddd;
         color: #ddd;
@@ -431,6 +476,26 @@ $dark-theme: mat.define-dark-theme(
     .dot-flashing::after {
         background-color: #ddd;
         color: #ddd;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    .Obsidian_Nav {
+        .Obsidian_Nav_Items {
+            background: rgb(33, 37, 41);
+            .Items_Group {
+                color: white;
+            }
+        }
+        .Obsidian_Nav_Side_Icons {
+            background: rgb(33, 37, 41);
+            .Icons_Group {
+                color: #222;
+                .Icon {
+                    filter: invert(1)
+                }
+            }
+        }
     }
 }
 
